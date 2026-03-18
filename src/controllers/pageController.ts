@@ -1,38 +1,42 @@
 import { Request, Response } from 'express';
-import { title } from 'node:process';
+import { createMenuObject } from '../helpers/createMenuObject';
 
 export const home = (req: Request, res: Response) => {
-		res.render('pages/page', {
-			banner: {
-				title: 'Todos os animais',
-				background: 'allanimals.jpg'
-			}
-		});
+	res.render('pages/page', {
+		menu: createMenuObject('all'),
+		banner: {
+			title: 'Todos os animais',
+			background: 'allanimals.jpg'
+		}
+	});
 };
 
 export const dogs = (req: Request, res: Response) => {
 	res.render('pages/page', {
-			banner: {
-				title: 'Cachorros',
-				background: 'banner_dog.jpg'
-			}
+		menu: createMenuObject('dogs'),
+		banner: {
+			title: 'Cachorros',
+			background: 'banner_dog.jpg'
+		}
 	});
 };
 
 export const cats = (req: Request, res: Response) => {
 	res.render('pages/page', {
-			banner: {
-				title: 'Gatos',
-				background: 'banner_cat.jpg'
-			}
+		menu: createMenuObject('cats'),
+		banner: {
+			title: 'Gatos',
+			background: 'banner_cat.jpg'
+		}
 	});
 };
 
 export const fishes = (req: Request, res: Response) => {
 	res.render('pages/page', {
-			banner: {
-				title: 'Todos os animais',
-				background: 'banner_fish.jpg'
-			}
+		menu: createMenuObject('fishes'),
+		banner: {
+			title: 'Todos os animais',
+			background: 'banner_fish.jpg'
+		}
 	});
 };
